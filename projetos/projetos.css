@@ -1,0 +1,218 @@
+:root {
+    --bg-color: #0f172a;       /* Azul escuro moderno */
+    --card-bg: #1e293b;        /* Fundo dos cards */
+    --card-item-bg: #334155;   /* Tom cinza para itens internos */
+    --text-color: #e2e8f0;     /* Texto claro */
+    --text-muted: #94a3b8;     /* Texto secundário */
+    --primary-color: #6366f1;  /* Roxo/Índigo para destaque */
+    --github-color: #475569;   /* Cor do botão do GitHub */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 50px;
+    margin: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.15) 0%, transparent 50%);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #323e4728;
+    padding: 20px;
+    width: 50%; 
+    height: 60px; 
+    margin: 0 auto;
+    border-radius: 15px;
+    font-size: 40px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin: 30px auto 0 auto; 
+    width: 100%; 
+    max-width: 900px;
+    border-radius: 15px;
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+#ir_para_meus_contatos { 
+    color: var(--text-muted);
+    font-size: 33px;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.contatos { 
+    width: 210px;
+    height: 79px;
+    padding: 10px 20px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.contatos:hover {
+    background-color: #323e4728;
+    transform: scale(0.95);
+    border-bottom: 2px solid #ffffff41;
+}
+
+.retorno {
+    width: 8%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.retorno:hover {
+    background-color: var(--bg-color);
+    transform: scale(0.95);
+    border-bottom: 2px solid #ffffff41;
+}
+
+.retorno a{
+    font-size: 100px;
+    color: #fff;
+}
+
+/* ========================================================
+   ESTILIZAÇÃO DO PROJETO DESTAQUE (SEM FUNDO BRANCO)
+======================================================== */
+.projeto-destaque-container {
+    background-color: var(--card-item-bg);
+    width: 100%;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.img-projeto-destaque img {
+    border-radius: 10px;
+    display: block;
+}
+
+.texto-projeto-destaque {
+    flex: 1;
+}
+
+.texto-projeto-destaque h4 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.texto-projeto-destaque p {
+    margin: 0 0 20px 0;
+    color: var(--text-muted);
+}
+
+/* ÁREA DOS BOTÕES DO DESTAQUE */
+.botoes-projeto {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-links {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.2s, transform 0.2s;
+    text-align: center;
+}
+
+.btn-explica {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-explica:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.btn-github {
+    background-color: var(--github-color);
+    color: var(--text-color);
+}
+
+.btn-github:hover {
+    background-color: #64748b;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================================
+   ESTILIZAÇÃO DOS 3 CARDS DE BAIXO
+======================================================== */
+.container-outros-projetos {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+    width: 100%;
+}
+
+.card-projeto {
+    background-color: var(--card-item-bg); 
+    flex: 1; 
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+}
+
+.card-projeto h4 {
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.card-projeto p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* BOTÕES PEQUENOS DOS 3 CARDS */
+.botoes-projeto-mini {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-links-mini {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s;
+}

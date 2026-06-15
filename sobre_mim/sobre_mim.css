@@ -1,0 +1,126 @@
+:root {
+    --bg-color: #0f172a;       /* Azul escuro moderno */
+    --card-bg: #1e293b;        /* Fundo dos cards */
+    --text-color: #e2e8f0;     /* Texto claro */
+    --text-muted: #94a3b8;     /* Texto secundário */
+    --primary-color: #6366f1;  /* Roxo/Índigo para destaque */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 50px;
+    margin: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.15) 0%, transparent 50%);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #323e4728;
+    padding: 20px;
+    width: 50%; /* largura */
+    height: 60px; /* altura */
+    margin: 0 auto;
+    border-radius: 15px;
+    font-size: 40px;
+    
+    display: flex; /* Ativa o flexbox */
+    justify-content: space-between;
+    align-items: center; /* Centraliza na vertical */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin-top: 30px;
+    width: 100%; /* Largura */
+    /* Removido height: 300px fixo para o texto caber perfeitamente dentro do card */
+    max-width: 900px;
+    border-radius: 15px;
+    margin-left: 90px;
+    
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center; /* Centraliza na vertical */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+#ir_para_meus_projetos { /* Esse é o link */
+    color: var(--text-muted);
+    font-size:33px;
+    height: 100%;
+
+    display: flex;
+    align-items: center; 
+}
+
+.meus_projetos { /* Essa é a div */
+    width: 210px;
+    height: 79px;
+    padding: 10px 20px;
+    margin-left: 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.meus_projetos:hover {
+    background-color: #323e4728;
+    transform: scale(0.95);
+    border-bottom: 2px solid #ffffff41;
+}
+
+/* CSS simplificado para o texto */
+.texto_sobre_mim {
+    display: flex;
+    flex-direction: column; /* Mantém os blocos empilhados verticalmente */
+    width: 100%;
+}
+
+/* NOVO CSS: Aplica o flexbox na linha de cima para alinhar os títulos e a imagem */
+.alinhamento-topo {
+    display: flex;
+    justify-content: space-between; /* Afasta o texto para a esquerda e o GitHub para a direita */
+    align-items: center;            /* Alinha os dois verticalmente ao centro */
+    margin-bottom: 25px;            /* Espaço antes de começar o texto "Sobre mim" */
+}
+
+.paragrafo {
+    margin-top: 0;       /* Zera para não dar conflito vertical */
+    margin-bottom: 8px;  /* Espaço entre uma linha de texto e outra */
+    margin-left: 0;      /* Texto alinhado direto com o container */
+}
+
+.card-rede-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTILO DAS IMAGENS/LOGOS */
+.card-rede-social img {
+    width: 120px;  /* Tamanho padrão para os ícones */
+    height: 120px;
+    transition: transform 0.3s, filter 0.3s;
+    opacity: 0.8; /* Deixa eles levemente discretos por padrão */
+}
+
+/* Como o ícone do GitHub original é preto, esse filtro inverte para branco e combina com tema dark */
+.icon-github {
+    filter: invert(1);
+}
+
+/* EFEITO AO PASSAR O MOUSE POR CIMA */
+.card-rede-social img:hover {
+    transform: scale(1.15) translateY(-5px); /* Aumenta um pouquinho e sobe sutilmente */
+    opacity: 1; /* Acende a cor original da logo */
+}
+
+#dc {
+    border-radius: 50%;
+}
