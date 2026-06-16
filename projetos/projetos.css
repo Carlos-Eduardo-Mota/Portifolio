@@ -216,3 +216,84 @@ main {
     text-align: center;
     transition: background-color 0.2s;
 }
+
+/* ==========================================================================
+   AJUSTES EXCLUSIVOS PARA TELAS DE ATÉ 768px (CELULAR)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px; /* Reduz a margem externa para aproveitar a tela do celular */
+    }
+
+    header {
+        width: 100%;       
+        font-size: 20px;           /* Reduzi de 24px para 20px para o texto não ficar gigante */
+        height: auto;      
+        padding: 12px 15px;        /* Ajuste fino no espaçamento interno */
+        box-sizing: border-box;    /* ESSENCIAL: força o padding a ficar DENTRO dos 100% */
+    }
+
+    #ir_para_meus_contatos {
+        font-size: 16px;           /* Reduzi para 16px para garantir que caiba em qualquer celular */
+    }
+
+    .contatos {
+        width: auto;       
+        height: auto;
+        padding: 6px 10px;
+    }
+
+    .retorno {
+        width: 100%;               /* Faz o contêiner ocupar a largura total */
+        justify-content: flex-start; /* Joga a seta totalmente para a esquerda */
+        padding-left: 10px;        /* Dá um espacinho da parede da tela */
+        margin-bottom: -10px;       /* Puxa o header um pouquinho mais para cima */
+    }
+
+    .retorno a {
+        font-size: 32px;           /* Diminui um tiquinho mais para ficar proporcional */
+    }
+
+    main {
+        padding: 20px;
+        gap: 20px;         /* Diminui o espaçamento interno geral */
+    }
+
+    /* --- AJUSTE DO PROJETO DESTAQUE --- */
+    .projeto-destaque-container {
+        flex-direction: column; /* Imagem fica em cima, texto fica embaixo */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .img-projeto-destaque img {
+        width: 100%;        /* A imagem do projeto se adapta à largura do celular */
+        height: auto;
+        max-width: 350px;   /* Evita que ela fique gigante se a tela for um tablet */
+    }
+
+    .texto-projeto-destaque {
+        text-align: center; /* Centraliza textos e botões no mobile */
+    }
+
+    .botoes-projeto {
+        justify-content: center; /* Centraliza os botões do destaque */
+        flex-direction: column;  /* Se a tela for muito pequena, os botões empilham */
+        gap: 10px;
+    }
+
+    .btn-links {
+        width: 80%;
+    }
+
+    /* --- AJUSTE DOS 3 CARDS DE BAIXO --- */
+    .container-outros-projetos {
+        flex-direction: column; /* Os 3 cards deixam de ficar lado a lado e viram uma coluna */
+        gap: 15px;
+    }
+
+    .card-projeto {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
