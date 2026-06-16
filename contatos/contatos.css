@@ -101,3 +101,47 @@ main {
 #dc {
     border-radius: 50%;
 }
+
+/* ==========================================================================
+   AQUI COMEÇA A MÁGICA: AJUSTES EXCLUSIVOS PARA TELAS DE ATÉ 768px (CELULAR)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px; /* Reduz o espaçamento externo para dar espaço ao conteúdo */
+    }
+
+    /* Ajuste da Seta de Voltar */
+    .retorno {
+        width: 100%;
+        justify-content: flex-start; /* Alinha a seta à esquerda no celular */
+        padding-left: 10px;
+        margin-bottom: -10px;
+    }
+
+    .retorno a {
+        font-size: 32px; /* Reduz o tamanho da seta para não quebrar a tela */
+    }
+
+    /* Ajuste do Header */
+    header {
+        width: 100%;
+        font-size: 24px;   /* Fonte menor para caber "Meus Contatos" */
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    
+    /* Ajuste do Bloco Principal dos Ícones */
+    main {
+        height: auto;      /* REMOVE os 300px fixos para o card crescer se os ícones empilharem */
+        padding: 40px 20px;
+        gap: 30px;         /* Reduz o espaçamento gigante de 60px para 30px */
+        flex-wrap: wrap;   /* MÁGICA: Se os ícones não couberem na horizontal, eles quebram de linha automaticamente */
+    }
+
+    /* Ajuste dos Ícones das Redes Sociais */
+    .card-rede-social img {
+        width: 90px;       /* Diminui um pouco as logos (de 120px para 90px) no celular */
+        height: 90px;
+    }
+}
