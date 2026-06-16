@@ -40,7 +40,6 @@ main {
     padding: 30px;
     margin-top: 30px;
     width: 100%; /* Largura */
-    /* Removido height: 300px fixo para o texto caber perfeitamente dentro do card */
     max-width: 900px;
     border-radius: 15px;
     margin-left: 90px;
@@ -123,4 +122,50 @@ main {
 
 #dc {
     border-radius: 50%;
+}
+
+/* ==========================================================================
+   AJUSTES EXCLUSIVOS PARA TELAS DE ATÉ 768px (CELULAR)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px; /* Diminui a borda externa gigante de 50px para o site respirar */
+    }
+
+    header {
+        width: 100%;       /* O menu agora ocupa a largura total disponível */
+        font-size: 24px;   /* Reduz o tamanho do texto "Sobre Mim" */
+        height: auto;      /* Deixa a altura se adaptar ao conteúdo */
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    #ir_para_meus_projetos {
+        font-size: 18px;   /* Diminui o texto "Meus Projetos" para não vazar */
+    }
+
+    .meus_projetos {
+        width: auto;       /* Tira a largura fixa de 210px que esmagava o link */
+        height: auto;
+        padding: 8px 12px;
+    }
+
+    main {
+        margin-left: 0;    /* Remove o empurrão de 90px para a esquerda */
+        margin-top: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        flex-direction: column; /* Caso precise empilhar algo interno futuramente */
+    }
+
+    .alinhamento-topo {
+        flex-direction: column-reverse; /* Joga o ícone do GitHub para cima do texto */
+        gap: 20px;                     /* Dá um espaço maneiro entre o ícone e os dados */
+        text-align: center;            /* Centraliza os blocos de texto */
+    }
+
+    .card-rede-social img {
+        width: 90px;   /* Reduz ligeiramente o ícone do GitHub no celular */
+        height: 90px;
+    }
 }
