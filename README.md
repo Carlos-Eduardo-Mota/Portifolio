@@ -9,7 +9,7 @@ Bem-vindo(a) ao repositório do meu portfólio pessoal! Este projeto foi desenvo
 O projeto foi construído utilizando as seguintes ferramentas:
 
 *   **Front-end:** HTML5, CSS3
-*   **Back-end:** Python
+*   **Back-end:** Nenhuma
 
 ## 📂 Funcionalidades
 
