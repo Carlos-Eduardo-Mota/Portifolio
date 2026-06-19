@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação do Projeto - Automação de Formas Geométricas</title>
+    <link rel="stylesheet" href="projeto2.css">
+</head>
+<body>
+
+    <div class="retorno">
+        <a href="../../projetos/projetos.html">⬅</a>
+    </div>
+
+    <div class="container-documento">
+        <header class="topo-documento">
+            <h1>Automação de Formas Geométricas</h1>
+            <p class="subtitulo">RPA, Trigonometria Aplicada e Simulação de Interface (Paint)</p>
+        </header>
+
+        <main class="conteudo-documento">
+            
+            <section class="secao-documento">
+                <h2>Visão Geral do Projeto</h2>
+                <p>Este projeto consiste num script de automação de interface (RPA) desenvolvido em Python que abre o Microsoft Paint automaticamente e utiliza as coordenadas do rato para desenhar formas geométricas (Quadrado, Triângulo e Círculo) sozinho, baseando-se na escolha do utilizador.</p>
+            </section>
+
+            <section class="secao-documento">
+                <h2>Análise Detalhada do Código</h2>
+                
+                <h3>1. As Bibliotecas Utilizadas</h3>
+                <p>O script depende de um conjunto de bibliotecas integradas e externas para executar o controlo periférico:</p>
+                <ul>
+                    <li><strong>pyautogui:</strong> Responsável por assumir o controlo do rato e do teclado, permitindo simular cliques, arrastos e digitação como se fosse uma pessoa real.</li>
+                    <li><strong>time:</strong> Utilizada para inserir pausas estratégicas (<code>time.sleep</code>), garantindo que o sistema operativo consiga carregar as janelas antes do Python enviar comandos.</li>
+                    <li><strong>math:</strong> Fornece as funções de cálculo matemático necessárias para converter graus em radianos e mapear curvas na tela.</li>
+                </ul>
+
+                <h3>2. As Funções de Desenho</h3>
+                <p>Cada forma geométrica utiliza uma abordagem lógica diferente para movimentar o cursor pela tela:</p>
+                <ul>
+                    <li><strong>O Quadrado:</strong> Utiliza o comando <code>dragRel</code> para fazer arrastos relativos à posição atual do rato, movendo 100 píxeis sequencialmente nas direções direita, cima, esquerda e baixo.</li>
+                    <li><strong>O Triângulo:</strong> Calcula a base reta e, em seguida, recua metade do tamanho horizontal enquanto sobe no eixo vertical para criar o vértice central, fechando a diagonal de forma precisa.</li>
+                    <li><strong>O Círculo Perfeito:</strong> Utiliza trigonometria avançada (cosseno para o eixo X e seno para o eixo Y). Através de um loop que percorre 360 graus de 15 em 15, a função usa <code>dragTo</code> com uma velocidade quase instantânea (<code>duration=0.01</code>) para conectar os pontos da circunferência de forma suave.</li>
+                </ul>
+
+                <h3>3. Inicialização e Loop de Decisão</h3>
+                <p>O fluxo principal do programa automatiza tarefas comuns e interage com o utilizador:</p>
+                <ul>
+                    <li><strong>Abertura Automática:</strong> O script pressiona a tecla Windows, digita 'Paint' caractere por caractere e pressiona Enter, aguardando 3 segundos até que a ferramenta de desenho esteja pronta.</li>
+                    <li><strong>Caixa de Diálogo Gráfica:</strong> Utiliza a função <code>pyautogui.confirm</code> para exibir um menu pop-up customizado no ecrã.</li>
+                    <li><strong>Estrutura Match/Case:</strong> O programa avalia a string retornada pelo botão clicado e direciona o fluxo para a função geométrica correspondente de forma limpa.</li>
+                </ul>
+            </section>
+
+            <section class="secao-documento">
+                <h2>🚀 Aprendizados Adquiridos</h2>
+                <p>O desenvolvimento desta automação trouxe grandes aprendizados em lógica prática:</p>
+                <ol>
+                    <li><strong>Robótica de Software (RPA):</strong> Entendimento de como mapear interações humanas básicas de teclado e rato dentro de softwares do sistema.</li>
+                    <li><strong>Matemática e Geometria no Código:</strong> Aplicação real de conceitos trigonométricos para a resolução de problemas de renderização e desenho no ecrã.</li>
+                    <li><strong>Controlo de Sincronismo:</strong> Ajuste de temporizações e durações de movimento para evitar conflitos de velocidade entre o código e o hardware do PC.</li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
