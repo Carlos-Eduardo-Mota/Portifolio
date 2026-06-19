@@ -42,7 +42,7 @@ main {
     width: 100%; /* Largura */
     max-width: 900px;
     border-radius: 15px;
-    margin: auto;
+    margin-left: 10%;
     display: flex; /* Ativa o flexbox */
     justify-content: center; /* Centraliza na horizontal */
     align-items: center; /* Centraliza na vertical */
