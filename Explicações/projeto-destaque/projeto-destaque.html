@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação do Projeto - Protótipo de Envio de Dados</title>
+    <link rel="stylesheet" href="projeto-destaque.css">
+</head>
+<body>
+
+    <div class="retorno">
+        <a href="/Projetos/Portifólio/projetos/projetos.html">⬅</a>
+    </div>
+
+    <div class="container-documento">
+        <header class="topo-documento">
+            <h1>Protótipo de Envio de Dados</h1>
+            <p class="subtitulo">Documentação Técnica e Análise do Projeto</p>
+        </header>
+
+        <main class="conteudo-documento">
+            
+            <section class="secao-documento">
+                <h2>Visão Geral do Projeto</h2>
+                <p>O <strong>Protótipo de Envio de Dados</strong> é uma interface de autenticação (tela de login ou cadastro) moderna e minimalista. O objetivo principal do projeto foi aplicar conceitos fundamentais de HTML5 estrutural e CSS3 avançado, focando em layouts responsivos e centralizados com Flexbox, validação nativa de formulários e design focado na experiência do usuário (UX).</p>
+            </section>
+
+            <section class="secao-documento">
+                <h2>Detalhes Técnicos e Funcionalidades</h2>
+                
+                <h3>1. Estruturação Semântica (HTML5)</h3>
+                <p>O esqueleto da página foi construído de forma limpa e direta, utilizando as melhores práticas de desenvolvimento:</p>
+                <ul>
+                    <li><strong>Container Principal (.caixa):</strong> Uma div isolada que funciona como o "card" do formulário, agrupando os elementos e destacando-os do fundo da tela.</li>
+                    <li><strong>Elementos de Formulário (&lt;form&gt;):</strong> Uso das tags corretas para captura de dados.</li>
+                    <li><strong>Validação Nativa:</strong>
+                        <ul>
+                            <li>O input de e-mail usa <code>type="email"</code>, forçando o navegador a validar se o usuário digitou um endereço válido (com @ e .com).</li>
+                            <li>O input de senha usa <code>type="password"</code> para mascarar os caracteres digitados por segurança, além dos atributos <code>minlength="6"</code> e <code>maxlength="12"</code>, que impedem o envio de senhas fracas ou longas demais diretamente pelo navegador.</li>
+                            <li>Ambos os campos possuem o atributo <code>required</code>, tornando o preenchimento obrigatório.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>2. Estilização e Design (CSS3)</h3>
+                <p>O visual do projeto segue uma paleta de cores escura (Dark Mode) inspirada em editores de código modernos:</p>
+                <ul>
+                    <li><strong>Reset Global (*):</strong> Uso do <code>box-sizing: border-box</code> com zeramento de margens e paddings, garantindo que o tamanho calculado dos elementos seja exato e sem quebras inesperadas.</li>
+                    <li><strong>Efeito de Fundo Dinâmico:</strong> O corpo da página (body) utiliza um <code>radial-gradient</code> sutil no canto inferior esquerdo (circle at 20% 80%), criando uma atmosfera moderna com um brilho azulado que quebra a monotonia do fundo escuro #0E131F.</li>
+                    <li><strong>Centralização Perfeita com Flexbox:</strong> O body foi configurado como um container Flex (<code>display: flex</code>) com <code>justify-content: center</code>, <code>align-items: center</code> e uma altura dinâmica de <code>100vh</code>. Isso garante que o formulário fique perfeitamente centralizado na tela do usuário, independente do tamanho do monitor.</li>
+                    <li><strong>Interatividade e Micro-interações:</strong>
+                        <ul>
+                            <li><strong>Foco (:focus):</strong> Ao clicar nos campos de texto, a borda muda para um tom avermelhado (<code>#772727f8</code>) e o contorno padrão do navegador é removido, criando uma identidade visual própria.</li>
+                            <li><strong>Efeito Hover (:hover):</strong> O botão de envio altera sua cor de fundo suavemente com uma animação de transição (<code>transition: background 0.3s ease</code>) e muda o cursor do mouse para o formato de clique (<code>cursor: pointer</code>), indicando claramente que o elemento é clicável.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="secao-documento">
+                <h2>🚀 Aprendizados Adquiridos</h2>
+                <p>Durante o desenvolvimento deste protótipo, foram consolidados conhecimentos práticos em:</p>
+                <ol>
+                    <li><strong>Posicionamento com Flexbox:</strong> Entendimento real de como alinhar elementos em eixos verticais e horizontais (<code>flex-direction: column</code> para o formulário e eixos cruzados para o body).</li>
+                    <li><strong>Estilização de Estados:</strong> Manipulação de pseudo-classes (<code>:hover</code> e <code>:focus</code>) para melhorar a experiência visual do usuário.</li>
+                    <li><strong>Segurança básica em Front-End:</strong> Utilização de atributos HTML restritivos para evitar o envio de formulários em branco ou mal formatados.</li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

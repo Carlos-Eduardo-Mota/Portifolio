@@ -1,0 +1,147 @@
+:root {
+    --bg-color: #0f172a;       /* Azul escuro moderno */
+    --card-bg: #1e293b;        /* Fundo dos cards */
+    --text-color: #e2e8f0;     /* Texto claro */
+    --text-muted: #94a3b8;     /* Texto secundário */
+    --primary-color: #6366f1;  /* Roxo/Índigo para destaque */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 50px;
+    margin: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.15) 0%, transparent 50%);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #323e4728;
+    padding: 20px;
+    width: 50%; /* largura */
+    height: 60px; /* altura */
+    margin: 0 auto;
+    border-radius: 15px;
+    font-size: 40px;
+    
+    display: flex; /* Ativa o flexbox */
+    justify-content: center;
+    align-items: center; /* Centraliza na vertical */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin: 30px auto 0 auto; /* Ajustado para centralizar na tela */
+    width: 100%; /* Largura */
+    height: 300px; /* Altura */
+    max-width: 900px;
+    border-radius: 15px;
+    
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center; /* Centraliza na vertical */
+    gap: 60px; /* Espaço entre cada um dos ícones */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.retorno {
+    width: 8%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.retorno:hover {
+    background-color: var(--bg-color);
+    transform: scale(0.95);
+    border-bottom: 2px solid #ffffff41;
+}
+
+.retorno a{
+    font-size: 100px;
+    color: #fff;
+}
+
+/* ESTILO DAS DIVS QUE ENVOLVEM OS LINKS */
+.card-rede-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTILO DAS IMAGENS/LOGOS */
+.card-rede-social img {
+    width: 120px;  /* Tamanho padrão para os ícones */
+    height: 120px;
+    transition: transform 0.3s, filter 0.3s;
+    opacity: 0.8; /* Deixa eles levemente discretos por padrão */
+}
+
+/* Como o ícone do GitHub original é preto, esse filtro inverte para branco e combina com tema dark */
+.icon-github {
+    filter: invert(1);
+}
+
+/* EFEITO AO PASSAR O MOUSE POR CIMA */
+.card-rede-social img:hover {
+    transform: scale(1.15) translateY(-5px); /* Aumenta um pouquinho e sobe sutilmente */
+    opacity: 1; /* Acende a cor original da logo */
+}
+
+#dc {
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   AQUI COMEÇA A MÁGICA: AJUSTES EXCLUSIVOS PARA TELAS DE ATÉ 768px (CELULAR)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px; /* Reduz o espaçamento externo para dar espaço ao conteúdo */
+    }
+
+    /* Ajuste da Seta de Voltar */
+    .retorno {
+        width: 100%;
+        justify-content: flex-start; /* Alinha a seta à esquerda no celular */
+        padding-left: 10px;
+        margin-bottom: -10px;
+    }
+
+    .retorno a {
+        font-size: 32px; /* Reduz o tamanho da seta para não quebrar a tela */
+    }
+
+    /* Ajuste do Header */
+    header {
+        width: 100%;
+        font-size: 24px;   /* Fonte menor para caber "Meus Contatos" */
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    
+    /* Ajuste do Bloco Principal dos Ícones */
+    main {
+        height: auto;      /* REMOVE os 300px fixos para o card crescer se os ícones empilharem */
+        padding: 40px 20px;
+        gap: 30px;         /* Reduz o espaçamento gigante de 60px para 30px */
+        flex-wrap: wrap;   /* MÁGICA: Se os ícones não couberem na horizontal, eles quebram de linha automaticamente */
+    }
+
+    /* Ajuste dos Ícones das Redes Sociais */
+    .card-rede-social img {
+        width: 90px;       /* Diminui um pouco as logos (de 120px para 90px) no celular */
+        height: 90px;
+    }
+}

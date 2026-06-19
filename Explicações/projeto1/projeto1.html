@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação do Projeto - Automação de Pastas em Python</title>
+    <link rel="stylesheet" href="projeto1.css">
+</head>
+<body>
+
+    <div class="retorno">
+        <a href="../../projetos/projetos.html">⬅</a>
+    </div>
+
+    <div class="container-documento">
+        <header class="topo-documento">
+            <h1>Gerenciamento de Pastas com Python</h1>
+            <p class="subtitulo">Análise de Código e Manipulação do Sistema Operacional</p>
+        </header>
+
+        <main class="conteudo-documento">
+            
+            <section class="secao-documento">
+                <h2>Visão Geral do Projeto</h2>
+                <p>Este projeto consiste num script em Python desenvolvido para automatizar o controlo de acessos e a organização de diretórios no sistema operacional. Ele utiliza um arquivo de texto local como um banco de dados simples para validar utilizadores permitidos e, em seguida, oferece opções para criar ou remover pastas automaticamente.</p>
+            </section>
+
+            <section class="secao-documento">
+                <h2>Análise Detalhada do Código</h2>
+                
+                <h3>1. Interface Inicial e Limpeza de Terminal</h3>
+                <p>O programa inicia importando a biblioteca nativa <code>os</code>, essencial para interagir diretamente com o sistema operacional. Logo após receber o nome do utilizador, o comando <code>os.system('cls' if os.name == 'nt' else 'clear')</code> é executado para limpar o ecrã, garantindo uma interface CLI (Interface de Linha de Comando) limpa e profissional.</p>
+
+                <h3>2. O Banco de Dados de Utilizadores</h3>
+                <p>O arquivo <code>Usuarios.txt</code> guarda os nomes das pessoas autorizadas. No código, a segurança e leitura correta são feitas através de:</p>
+                <ul>
+                    <li><strong>Verificação de Existência:</strong> O comando <code>os.path.exists('Usuarios.txt')</code> impede que o programa vá abaixo caso o arquivo mestre desapareça.</li>
+                    <li><strong>Gerenciamento de Contexto:</strong> O bloco <code>with open(...)</code> abre o arquivo de forma segura e garante o seu fechamento automático.</li>
+                    <li><strong>Tratamento de Codificação:</strong> O parâmetro <code>encoding='utf-8'</code> é configurado para suportar caracteres acentuados sem quebrar o código.</li>
+                    <li><strong>List Comprehension e Sanetização:</strong> A expressão <code>[linha.strip() for linha in file.readlines()]</code> lê as linhas e remove os espaços ou quebras de linha invisíveis (<code>\n</code>), evitando falhas na comparação dos nomes.</li>
+                </ul>
+
+                <h3>3. Sistema de Autenticação e Bloqueio</h3>
+                <p>Após ler a lista, o script valida se o input inserido está presente no arquivo. Se o utilizador não for encontrado, a função <code>exit()</code> encerra o programa imediatamente, funcionando como um verdadeiro porteiro do sistema.</p>
+
+                <h3>4. Automação de Diretórios (Criar e Apagar)</h3>
+                <p>Com o utilizador devidamente validado, o script executa tarefas operacionais automatizadas:</p>
+                <ul>
+                    <li><strong>Criação Segura:</strong> Utiliza <code>os.mkdir()</code> para gerar uma pasta personalizada com o nome do utilizador logado, mas apenas após confirmar com o <code>os.path.exists()</code> que ela ainda não existe.</li>
+                    <li><strong>Listagem de Arquivos:</strong> O comando <code>os.listdir()</code> exibe em tempo real no terminal tudo o que está na pasta do projeto para que o utilizador possa escolher o que apagar.</li>
+                    <li><strong>Eliminação de Pastas:</strong> O comando <code>os.rmdir()</code> é acionado caso o utilizador decida excluir alguma pasta listada.</li>
+                </ul>
+            </section>
+
+            <section class="secao-documento">
+                <h2>🚀 Aprendizados Adquiridos</h2>
+                <p>O desenvolvimento deste script em Python consolidou conceitos cruciais de lógica e programação backend:</p>
+                <ol>
+                    <li><strong>Manipulação de Ficheiros (I/O):</strong> Leitura detalhada de arquivos de texto e limpeza de strings.</li>
+                    <li><strong>Integração com o Sistema Operacional:</strong> Domínio sobre comandos de terminal, navegação e manipulação de pastas via código.</li>
+                    <li><strong>Tratamento de Exceções e Fluxos:</strong> Prevenção de erros operacionais comuns (como tentar abrir arquivos inexistentes) através de verificações prévias.</li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

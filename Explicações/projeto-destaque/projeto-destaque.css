@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #0E131F;
+    color: #8B939C;
+    font-family: sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+    background-image: radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.1) 0%, transparent 50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+}
+
+.container-documento {
+    background-color: #161D30;
+    width: 100%;
+    max-width: 850px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.topo-documento {
+    border-bottom: 2px solid #38405F;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.topo-documento h1 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: #6366f1;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.secao-documento {
+    margin-bottom: 35px;
+}
+
+.secao-documento h2 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 15px;
+    border-left: 4px solid #6366f1;
+    padding-left: 10px;
+}
+
+.secao-documento h3 {
+    color: #e2e8f0;
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+}
+
+.secao-documento p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+ul, ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li strong {
+    color: #e2e8f0;
+}
+
+code {
+    background-color: #38405F;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.retorno {
+    width: 100%;             
+    max-width: 850px;        /* Alinha perfeitamente com a largura do card */
+    margin: 20px auto 10px auto; /* Centraliza o bloco e dá espaço do topo e do card */
+    display: flex;
+    justify-content: flex-start; /* Força a seta a ficar no canto esquerdo */
+}
+
+.retorno a {
+    font-size: 35px;         /* Aumenta o tamanho da seta para ficar bem visível */
+    color: #FFFFFF;          /* Deixa a seta branca para dar contraste total com o fundo escuro */
+    text-decoration: none;   /* Remove qualquer sublinhado padrão */
+    line-height: 1;          /* Evita que o tamanho da linha empurre o card para baixo */
+    transition: all 0.2s ease-in-out; /* Transição suave para o efeito de hover */
+    display: inline-block;
+}
+
+/* Efeito de hover: quando passas o rato, ela cresce um pouco e fica roxa */
+.retorno a:hover {
+    color: #6366f1;          /* Muda para o roxo do teu portfólio */
+    transform: scale(1.15);  /* Dá um leve pulo para trás/frente, criando destaque */
+}
+
+/* =======================================================
+   AJUSTES EXCLUSIVOS PARA TELAS DE ATÉ 768px (CELULAR)
+   ======================================================= */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px 10px; 
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .container-documento {
+        padding: 20px; 
+        border-radius: 10px;
+    }
+
+    .retorno {
+        padding-left: 5px;   /* Ajusta o alinhamento na tela do telemóvel */
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .retorno a {
+        font-size: 28px;     /* No telemóvel diminui ligeiramente para não ficar gigante */
+    }
+
+    .topo-documento h1 {
+        font-size: 24px; 
+    }
+
+    .secao-documento h2 {
+        font-size: 18px; 
+    }
+
+    .secao-documento h3 {
+        font-size: 16px;
+    }
+
+    .secao-documento p {
+        font-size: 15px;
+        text-align: left; 
+    }
+
+    ul, ol {
+        margin-left: 18px; 
+    }
+}
