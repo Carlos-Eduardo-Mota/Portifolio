@@ -49,6 +49,23 @@ main {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
+footer {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin: 30px auto 0 auto; /* Ajustado para centralizar na tela */
+    width: 100%; /* Largura */
+    height: 200px; /* Altura */
+    max-width: 900px;
+    border-radius: 15px;
+    
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center; /* Centraliza na vertical */
+    gap: 40px; /* Espaço entre cada um dos ícones */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
 #ir_para_meus_projetos { /* Esse é o link */
     color: var(--text-muted);
     font-size:33px;
@@ -100,6 +117,13 @@ main {
     align-items: center;
 }
 
+.card-rede-social {
+    display: flex;
+    margin-left: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ESTILO DAS IMAGENS/LOGOS */
 .card-rede-social img {
     width: 120px;  /* Tamanho padrão para os ícones */
@@ -139,6 +163,16 @@ main {
         box-sizing: border-box;
     }
 
+    footer {
+        height: auto;      /* REMOVE os 300px fixos para o card crescer se os ícones empilharem */
+        padding: 40px 20px;
+        gap: 30px;         /* Reduz o espaçamento gigante de 60px para 30px */
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     #ir_para_meus_projetos {
         font-size: 18px;   /* Diminui o texto "Meus Projetos" para não vazar */
     }
@@ -164,7 +198,8 @@ main {
     }
 
     .card-rede-social img {
-        width: 90px;   /* Reduz ligeiramente o ícone do GitHub no celular */
+        width: 90px;       /* Diminui um pouco as logos (de 120px para 90px) no celular */
         height: 90px;
+        margin-right: 7px;
     }
 }
