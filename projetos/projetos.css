@@ -31,7 +31,7 @@ header {
     border-radius: 15px;
     font-size: 40px;
     display: flex; 
-    justify-content: space-between;
+    justify-content: center;
     align-items: center; 
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
 }
@@ -227,8 +227,8 @@ main {
 
     header {
         width: 100%;       
-        font-size: 20px;           /* Reduzi de 24px para 20px para o texto não ficar gigante */
-        height: auto;      
+        font-size: 30px;
+        height: 80px;      
         padding: 12px 15px;        /* Ajuste fino no espaçamento interno */
         box-sizing: border-box;    /* ESSENCIAL: força o padding a ficar DENTRO dos 100% */
     }
