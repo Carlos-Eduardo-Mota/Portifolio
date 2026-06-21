@@ -58,20 +58,6 @@ main {
     align-items: center; 
 }
 
-.contatos { 
-    width: 210px;
-    height: 79px;
-    padding: 10px 20px;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-
-.contatos:hover {
-    background-color: #323e4728;
-    transform: scale(0.95);
-    border-bottom: 2px solid #ffffff41;
-}
-
 .retorno {
     width: 8%;
     height: 40px;
@@ -235,12 +221,6 @@ main {
 
     #ir_para_meus_contatos {
         font-size: 16px;           /* Reduzi para 16px para garantir que caiba em qualquer celular */
-    }
-
-    .contatos {
-        width: auto;       
-        height: auto;
-        padding: 6px 10px;
     }
 
     .retorno {
