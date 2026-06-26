@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explicação do Projeto - Protótipo de Envio de Dados</title>
+    <title>Case de Estudo - Protótipo de Interface para Envio de Dados Simétricos</title>
     <link rel="stylesheet" href="projeto-destaque.css">
 </head>
 <body>
@@ -14,56 +14,53 @@
 
     <div class="container-documento">
         <header class="topo-documento">
-            <h1>Protótipo de Envio de Dados</h1>
-            <p class="subtitulo">Documentação Técnica e Análise do Projeto</p>
+            <h1>Protótipo de Envio de Dados Simétricos</h1>
+            <p class="subtitulo">Case de Estudo, Documentação Técnica e Análise do Projeto</p>
         </header>
 
         <main class="conteudo-documento">
             
             <section class="secao-documento">
                 <h2>Visão Geral do Projeto</h2>
-                <p>O <strong>Protótipo de Envio de Dados</strong> é uma interface de autenticação (tela de login ou cadastro) moderna e minimalista. O objetivo principal do projeto foi aplicar conceitos fundamentais de HTML5 estrutural e CSS3 avançado, focando em layouts responsivos e centralizados com Flexbox, validação nativa de formulários e design focado na experiência do usuário (UX).</p>
+                <p>O <strong>Protótipo de Envio de Dados</strong> é uma interface web focada na experiência do usuário (UX), projetada para simplificar processos de cadastro híbridos. O grande diferencial do projeto está na sua <strong>divisão visual simétrica</strong>: enquanto o lado esquerdo lida com dados estruturados de autenticação e identificação, o lado direito funciona como uma seção de texto livre e personalizada. O objetivo principal foi aplicar alinhamentos complexos, contraste estético marcante e validação nativa em navegadores.</p>
             </section>
 
             <section class="secao-documento">
-                <h2>Detalhes Técnicos e Funcionalidades</h2>
+                <h2>🛠️ Tecnologias de Implementação</h2>
+                <ul>
+                    <li><strong>HTML5 Semântico:</strong> Utilização de elementos estruturais nativos como <code>&lt;main&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;textarea&gt;</code> e inputs especializados para garantir uma base de código organizada e escalável.</li>
+                    <li><strong>CSS3 Custom Properties (Variáveis):</strong> Criação de um sistema centralizado de design tokens através do escopo <code>:root</code> (<code>--principal</code>, <code>--secundaria</code>, <code>--tercearia</code>), facilitando futuras manutenções ou implementações de temas como Dark Mode.</li>
+                    <li><strong>Layout Avançado com Flexbox:</strong> Todo o posicionamento e centralização dos componentes dependem do modelo de caixa flexível (<code>display: flex</code>), garantindo que a interface se comporte de forma previsível e centralizada na viewport.</li>
+                    <li><strong>Soft UI e Profundidade Visual:</strong> Aplicação de cantos arredondados suavizados (<code>border-radius: 5px</code>) e um gradiente radial fixo no plano de fundo (<code>radial-gradient</code>) para enriquecer a estética geral sem poluir a visão do usuário.</li>
+                </ul>
+            </section>
+
+            <section class="secao-documento">
+                <h2>Detalhes da Arquitetura do Código</h2>
                 
-                <h3>1. Estruturação Semântica (HTML5)</h3>
-                <p>O esqueleto da página foi construído de forma limpa e direta, utilizando as melhores práticas de desenvolvimento:</p>
+                <h3>1. Estruturação Semântica (index.html)</h3>
+                <p>O arquivo gerencia as duas jornadas da interface dentro de um bloco único dividido em duas colunas funcionais:</p>
                 <ul>
-                    <li><strong>Container Principal (.caixa):</strong> Uma div isolada que funciona como o "card" do formulário, agrupando os elementos e destacando-os do fundo da tela.</li>
-                    <li><strong>Elementos de Formulário (&lt;form&gt;):</strong> Uso das tags corretas para captura de dados.</li>
-                    <li><strong>Validação Nativa:</strong>
-                        <ul>
-                            <li>O input de e-mail usa <code>type="email"</code>, forçando o navegador a validar se o usuário digitou um endereço válido (com @ e .com).</li>
-                            <li>O input de senha usa <code>type="password"</code> para mascarar os caracteres digitados por segurança, além dos atributos <code>minlength="6"</code> e <code>maxlength="12"</code>, que impedem o envio de senhas fracas ou longas demais diretamente pelo navegador.</li>
-                            <li>Ambos os campos possuem o atributo <code>required</code>, tornando o preenchimento obrigatório.</li>
-                        </ul>
-                    </li>
+                    <li><strong>O Formulário de Cadastro (.lado1):</strong> Implementa validações restritas logo na camada do cliente através de atributos nativos. O e-mail valida o formato do endereço eletrônico automaticamente, e a senha possui delimitadores rígidos de tamanho (<code>minlength="6"</code> e <code>maxlength="12"</code>). O campo de data ativa o calendário nativo do sistema operacional. Todo o bloco é protegido pela propriedade <code>required</code>.</li>
+                    <li><strong>Área de Biografia/Texto (.lado2):</strong> Uma seção de texto livre que utiliza um elemento <code>&lt;textarea&gt;</code> otimizado, permitindo que o usuário envie informações discursivas personalizadas de forma independente.</li>
                 </ul>
 
-                <h3>2. Estilização e Design (CSS3)</h3>
-                <p>O visual do projeto segue uma paleta de cores escura (Dark Mode) inspirada em editores de código modernos:</p>
+                <h3>2. Estilização e Identidade Visual (style.css)</h3>
+                <p>O design foi arquitetado em cima de um contraste marcante de blocos coloridos para guiar os olhos do usuário:</p>
                 <ul>
-                    <li><strong>Reset Global (*):</strong> Uso do <code>box-sizing: border-box</code> com zeramento de margens e paddings, garantindo que o tamanho calculado dos elementos seja exato e sem quebras inesperadas.</li>
-                    <li><strong>Efeito de Fundo Dinâmico:</strong> O corpo da página (body) utiliza um <code>radial-gradient</code> sutil no canto inferior esquerdo (circle at 20% 80%), criando uma atmosfera moderna com um brilho azulado que quebra a monotonia do fundo escuro #0E131F.</li>
-                    <li><strong>Centralização Perfeita com Flexbox:</strong> O body foi configurado como um container Flex (<code>display: flex</code>) com <code>justify-content: center</code>, <code>align-items: center</code> e uma altura dinâmica de <code>100vh</code>. Isso garante que o formulário fique perfeitamente centralizado na tela do usuário, independente do tamanho do monitor.</li>
-                    <li><strong>Interatividade e Micro-interações:</strong>
-                        <ul>
-                            <li><strong>Foco (:focus):</strong> Ao clicar nos campos de texto, a borda muda para um tom avermelhado (<code>#772727f8</code>) e o contorno padrão do navegador é removido, criando uma identidade visual própria.</li>
-                            <li><strong>Efeito Hover (:hover):</strong> O botão de envio altera sua cor de fundo suavemente com uma animação de transição (<code>transition: background 0.3s ease</code>) e muda o cursor do mouse para o formato de clique (<code>cursor: pointer</code>), indicando claramente que o elemento é clicável.</li>
-                        </ul>
-                    </li>
+                    <li>A área de cadastro usa uma base clara, limpa e minimalista baseada na variável <code>--principal</code>.</li>
+                    <li>A área discursiva adota um tom vibrante e moderno de índigo/roxo através da variável <code>--tercearia</code>, criando um ponto de foco que quebra a monotonia dos formulários tradicionais da internet.</li>
+                    <li>Elementos de entrada (inputs) e botões ganharam espaçamentos equilibrados (<code>margin</code>) e dimensões fixas confortáveis para cliques, otimizando as leis de UX para interações em telas de computadores.</li>
                 </ul>
             </section>
 
             <section class="secao-documento">
-                <h2>🚀 Aprendizados Adquiridos</h2>
-                <p>Durante o desenvolvimento deste protótipo, foram consolidados conhecimentos práticos em:</p>
+                <h2>⚙️ Aprendizados e Próximos Passos (Roadmap de Evolução)</h2>
+                <p>Como parte do ciclo de desenvolvimento de engenharia de software, foram mapeadas melhorias técnicas estruturais para serem implementadas nas próximas iterações do produto:</p>
                 <ol>
-                    <li><strong>Posicionamento com Flexbox:</strong> Entendimento real de como alinhar elementos em eixos verticais e horizontais (<code>flex-direction: column</code> para o formulário e eixos cruzados para o body).</li>
-                    <li><strong>Estilização de Estados:</strong> Manipulação de pseudo-classes (<code>:hover</code> e <code>:focus</code>) para melhorar a experiência visual do usuário.</li>
-                    <li><strong>Segurança básica em Front-End:</strong> Utilização de atributos HTML restritivos para evitar o envio de formulários em branco ou mal formatados.</li>
+                    <li><strong>Otimização de Semântica e Validação:</strong> Encapsular os elementos da segunda coluna (<code>.lado2</code>) dentro de um bloco isolado de <code>&lt;form&gt;</code> para garantir o funcionamento nativo do comportamento de submit e validação do campo de texto.</li>
+                    <li><strong>Acessibilidade Universal (a11y):</strong> Substituir o uso exclusivo de placeholders por tags <code>&lt;label&gt;</code> explicitamente associadas a cada campo, adaptando a interface para leitores de tela de forma correta.</li>
+                    <li><strong>Responsividade Mobile-First:</strong> Ajustar as quebras de layout usando Media Queries para que a estrutura simétrica de duas colunas se transforme em um empilhamento vertical fluido em telas de smartphones.</li>
                 </ol>
             </section>
 
