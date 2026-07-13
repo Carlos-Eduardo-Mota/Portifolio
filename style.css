@@ -3,6 +3,7 @@
     --card-bg: #1e293b;        /* Fundo dos cards */
     --text-color: #e2e8f0;     /* Texto claro */
     --text-muted: #94a3b8;     /* Texto secundário */
+    --primary-color: #6366f1;  /* Roxo/Índigo para destaque */
 }
 
 body {
@@ -41,6 +42,7 @@ main {
     width: 100%; /* Largura */
     max-width: 900px;
     border-radius: 15px;
+    margin-left: 13%;
     display: flex; /* Ativa o flexbox */
     justify-content: center; /* Centraliza na horizontal */
     align-items: center; /* Centraliza na vertical */
