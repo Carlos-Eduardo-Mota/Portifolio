@@ -11,8 +11,9 @@ body {
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    padding: 50px;
+    padding-top: 50px;
     margin: 0;
+    min-height: 100svh;
     background-image: radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.15) 0%, transparent 50%);
 }
 
@@ -42,7 +43,7 @@ main {
     width: 100%; /* Largura */
     max-width: 900px;
     border-radius: 15px;
-    margin-left: 13%;
+    margin-left: 12%;
     display: flex; /* Ativa o flexbox */
     justify-content: center; /* Centraliza na horizontal */
     align-items: center; /* Centraliza na vertical */
