@@ -1,254 +1,200 @@
 :root {
-    --bg-color: #0f172a;       /* Azul escuro moderno */
-    --card-bg: #1e293b;        /* Fundo dos cards */
-    --text-color: #e2e8f0;     /* Texto claro */
-    --text-muted: #94a3b8;     /* Texto secundário */
-    --primary-color: #6366f1;  /* Roxo/Índigo para destaque */
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary-color: #6366f1;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    padding-top: 50px;
-    margin: 0;
-    min-height: 100svh;
-    background-image: radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.15) 0%, transparent 50%);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+  margin: 0;
+  min-height: 100vh;
+  background-image: radial-gradient(
+    circle at 80% 20%,
+    rgba(0, 102, 204, 0.15) 0%,
+    transparent 50%
+  );
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+/* --- HEADER --- */
 header {
-    background-color: #323e4728;
-    padding: 20px;
-    width: 50%; /* largura */
-    height: 60px; /* altura */
-    margin: 0 auto;
-    border-radius: 15px;
-    font-size: 40px;
-    
-    display: flex; /* Ativa o flexbox */
-    justify-content: space-between;
-    align-items: center; /* Centraliza na vertical */
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  background-color: rgba(50, 62, 71, 0.2);
+  padding: 0 0 0 30px;
+  width: 100%;
+  max-width: 900px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
-main {
-    background-color: var(--card-bg);
-    padding: 30px;
-    margin-top: 30px;
-    width: 100%; /* Largura */
-    max-width: 900px;
-    border-radius: 15px;
-    margin-left: 12%;
-    display: flex; /* Ativa o flexbox */
-    justify-content: center; /* Centraliza na horizontal */
-    align-items: center; /* Centraliza na vertical */
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+.header-titulo {
+  font-size: 1.8rem;
+  margin: 0;
 }
 
-footer {
-    background-color: var(--card-bg);
-    padding: 30px;
-    margin: 30px auto 0 auto; /* Ajustado para centralizar na tela */
-    width: 100%; /* Largura */
-    height: 200px; /* Altura */
-    max-width: 900px;
-    border-radius: 15px;
-    
-    display: flex; /* Ativa o flexbox */
-    justify-content: center; /* Centraliza na horizontal */
-    align-items: center; /* Centraliza na vertical */
-    gap: 40px; /* Espaço entre cada um dos ícones */
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
+.meus_projetos {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
-#ir_para_meus_projetos { /* Esse é o link */
-    color: var(--text-muted);
-    font-size:33px;
-    height: 100%;
-
-    display: flex;
-    align-items: center; 
-}
-
-.meus_projetos { /* Essa é a div */
-    width: 210px;
-    height: 79px;
-    padding: 10px 20px;
-    margin-left: 0;
-    transition: 0.3s;
-    white-space: nowrap;
+#ir_para_meus_projetos {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 .meus_projetos:hover {
-    background-color: #323e4728;
-    transform: scale(0.95);
-    border-bottom: 2px solid #ffffff41;
+  background-color: rgba(50, 62, 71, 0.35);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  transform: scale(0.97);
 }
 
-/* CSS simplificado para o texto */
-.texto_sobre_mim {
-    display: flex;
-    flex-direction: column; /* Mantém os blocos empilhados verticalmente */
-    width: 100%;
+.meus_projetos:hover #ir_para_meus_projetos {
+  color: var(--text-color);
 }
 
-/* NOVO CSS: Aplica o flexbox na linha de cima para alinhar os títulos e a imagem */
+/* --- MAIN --- */
+main {
+  background-color: var(--card-bg);
+  padding: 35px;
+  margin: 30px auto 0 auto;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
 .alinhamento-topo {
-    display: flex;
-    justify-content: space-between; /* Afasta o texto para a esquerda e o GitHub para a direita */
-    align-items: center;            /* Alinha os dois verticalmente ao centro */
-    margin-bottom: 25px;            /* Espaço antes de começar o texto "Sobre mim" */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
 }
 
-.paragrafo {
-    margin-top: 0;       /* Zera para não dar conflito vertical */
-    margin-bottom: 8px;  /* Espaço entre uma linha de texto e outra */
-    margin-left: 0;      /* Texto alinhado direto com o container */
+.dados-texto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.card-rede-social {
-    display: flex;
-    margin-left: 40px;
-    justify-content: center;
-    align-items: center;
+.dados-texto li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-/* ESTILO DAS IMAGENS/LOGOS */
-.card-rede-social img {
-    width: 120px;  /* Tamanho padrão para os ícones */
-    height: 120px;
-    transition: transform 0.3s, filter 0.3s;
-    opacity: 0.8; /* Deixa eles levemente discretos por padrão */
+.sobre-texto {
+  margin: 0;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 1.05rem;
 }
 
-/* Como o ícone do GitHub original é preto, esse filtro inverte para branco e combina com tema dark */
+/* --- FOOTER --- */
+footer {
+  background-color: var(--card-bg);
+  padding: 30px;
+  margin: 30px auto 0 auto;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+footer h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* --- ÍCONES --- */
+.card-rede-social img,
+.repositorio img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.85;
+}
+
 .icon-github {
-    filter: invert(1);
-    width: 120px;  /* Tamanho padrão para os ícones */
-    height: 120px;
-}
-
-/* EFEITO AO PASSAR O MOUSE POR CIMA */
-.card-rede-social img:hover {
-    transform: scale(1.15) translateY(-5px); /* Aumenta um pouquinho e sobe sutilmente */
-    opacity: 1; /* Acende a cor original da logo */
+  filter: invert(1);
 }
 
 #dc {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
-.repositorio {
-    width: 120px;  /* Tamanho padrão para os ícones */
-    height: 120px;
-    display: flex;
-    margin-left: 40px;
-    justify-content: center;
-    align-items: center;
-}
-
-.repositorio img {
-    transition: transform 0.3s, filter 0.3s;
-    opacity: 0.8; /* Deixa eles levemente discretos por padrão */
-    filter: invert(0.5);
-}
-
+.card-rede-social img:hover,
 .repositorio img:hover {
-    transform: scale(1.15) translateY(-5px); /* Aumenta um pouquinho e sobe sutilmente */
-    opacity: 1; /* Acende a cor original da logo */
-
+  transform: scale(1.12) translateY(-5px);
+  opacity: 1;
 }
 
-/* ==========================================================================
-   1. AJUSTES PARA TABLETS E IPADS (Telas de até 1024px)
-   ========================================================================== */
-@media screen and (max-width: 1024px) {
-    body {
-        padding: 30px; /* Reduz o padding gigante de 50px do desktop */
-    }
-
-    header {
-        width: 100%;       /* Ocupa a largura total disponível */
-        font-size: 28px;   /* Texto do menu confortável */
-        height: auto;      
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    main {
-        margin-left: 0;    /* Remove o empurrão do desktop */
-        margin-top: 25px;
-        padding: 25px;
-        width: 100%;
-        max-width: 100%;   /* Garante que o card ocupe o espaço correto */
-        box-sizing: border-box;
-    }
-
-    /* No iPad, mantém o texto e o GitHub lado a lado, mas ajusta o espaço */
-    .alinhamento-topo {
-        flex-direction: row; 
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-    }
-
-    /* Remove a margem chata que entorta os ícones */
-    .card-rede-social, .repositorio {
-        margin-left: 0 !important;
-    }
-
-    footer {
-        height: auto;      
-        padding: 30px 20px;
-        gap: 30px;         
-        flex-wrap: wrap; /* Se faltar espaço no rodapé, eles quebram linha */
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    #ir_para_meus_projetos {
-        font-size: 22px;
-    }
-
-    .meus_projetos {
-        width: auto;       
-        height: auto;
-        padding: 8px 16px;
-    }
-}
-
-/* ==========================================================================
-   2. AJUSTES EXCLUSIVOS PARA CELULARES (Telas de até 768px)
-   ========================================================================== */
+/* --- RESPONSIVIDADE (Ajuste automático para celular) --- */
 @media screen and (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
+  header {
+    height: auto; /* Deixa a altura se adaptar */
+    padding: 20px;
+    flex-direction: column; /* Empilha o título e a aba */
+    gap: 15px;
+  }
 
-    header {
-        font-size: 22px;
-    }
+  .header-titulo {
+    font-size: 1.5rem;
+  }
 
-    #ir_para_meus_projetos {
-        font-size: 18px;
-    }
+  /* No celular, a aba vira uma faixa horizontal inteira */
+  .meus_projetos {
+    width: 100%;
+    height: 50px; /* Altura fixa confortável para toque no celular */
+    justify-content: center;
+    background-color: rgba(50, 62, 71, 0.25);
+    border-radius: 8px;
+  }
 
-    /* No celular sim, nós empilhamos o GitHub para cima do texto */
-    .alinhamento-topo {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    /* Diminui um pouco os ícones para telas pequenas */
-    .card-rede-social img, .repositorio img {
-        width: 90px;
-        height: 90px;
-    }
+  #ir_para_meus_projetos {
+    padding: 0;
+    font-size: 1.1rem;
+    width: 100%;
+    justify-content: center;
+  }
 }
